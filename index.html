@@ -15,12 +15,18 @@
         var TodoComponent = React.createClass({
             render: function(){
               return(
-                      <h2>My Name is Adam</h2>
+                      <h2>{this.props.user} likes to eat {this.props.food}</h2>
               );
             }
         });
 
-        React.render(<TodoComponent/>, document.getElementById('content'));
+        React.render(
+          <div>
+          <TodoComponent user="Bucky" food="Bacon"/>
+          <TodoComponent user="Adam" food="Tuna"/>
+          <TodoComponent food="Beef"/>
+          <TodoComponent food="Ham"/>
+          </div>, document.getElementById('content'));
 
       </script>
 
